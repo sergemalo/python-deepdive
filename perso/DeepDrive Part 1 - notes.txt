@@ -1,0 +1,17 @@
+import this
+PEP 20 (Pep documents)
+
+Variables conventions:
+_xxx (internal / private object)
+  ** will not be imported with "from xxx import *"
+  
+__xxx - unsed to mangle ckass attributes - useful in inheritance
+
+__xxx__ system-defined names - Don't use!
+
+Look at "PEP 8" style guide
+Packages: short, all lowercase
+Modules: short, all lowercase
+Classes: CamelCase
+Functions, variables: snake_case
+Constants: MIN_APR (All uppercase, underscores)
