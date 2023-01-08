@@ -83,3 +83,29 @@ for loops are for "iterables"
 for i in iterable
 while loop is closer to C++ for loops
 for can have "else" as for while loops
+automatic indexing:
+for i in len(iterable):
+    print (i, iterable[i])
+    
+for i, c in enumerate(iterable):
+    print (i, c)
+    
+-----
+hex(id(xxx)) # Gives the address of xxx
+orverload str: __str__
+Representation __repr__ - Standard is to show how constructor was called.
+overload ==: __eq__
+  Always check type also with instance (not type, because it will not handle subclasses)
+  if instance(other, Rectangle)
+Others: __lt__, __gt__, __ne__, __lte__
+PAs besoin dImplémenter lt et gt, Python va faire l'invese automatiquement.
+
+Important: when adding attributes to a class, think if you should encapsulate with getters/setters at the beginning...
+
+Instance methods:
+@property
+def _xxx(self):
+   return self._property
+@xxx.setter
+def xxx(self, value):
+   self._property = value
