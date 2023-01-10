@@ -109,3 +109,11 @@ def _xxx(self):
 @xxx.setter
 def xxx(self, value):
    self._property = value
+   
+   
+Section 3
+---------
+Everything is an object!!
+
+----
+Ref count is automatic by Python Memory Manager

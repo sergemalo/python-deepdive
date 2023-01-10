@@ -1,4 +1,7 @@
 # import this
+import sys
+import ctypes
+
 def my_func(a: int, b: int):
     print(
         """A
@@ -31,7 +34,7 @@ class Rectangle:
 
     @property
     def width(self):
-        return self._width
+        return self._width   ### SEE HOW _width exists!!
     @width.setter
     def width(self, value):
         if value <= 0:
@@ -58,3 +61,6 @@ class Rectangle:
 
 r1 = Rectangle(1,2)
 r2 = Rectangle(1,2)
+
+def ref_count(addr: int):
+    return ctypes.c_long.from_address(addr).value
