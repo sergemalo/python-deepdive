@@ -117,3 +117,26 @@ Everything is an object!!
 
 ----
 Ref count is automatic by Python Memory Manager
+sys.getrefcount(d)
+ctypes.c_long.from_address(id(d)).value
+----
+Garbage collector can be turned off: gc.disable()   # Stops collecting, but keeps tracks of objects
+To resume: gc.collect()
+Destrctutor: __del__
+Use Python 3.4 and above
+----
+ALL VARIABLES ARE REFERENCES !!!
+USE type() to know the current type of the data refered by a variable.
+----
+Every time we assing a new value, a new object is created
+Values referenced by variable can never be changed!!
+a = 10
+b = 10
+------> a anf b point to the same address!!!!
+-----
+Immutable: numbers, strings, tuples (), frozen sets, User classes 
+Mutable: lists [], sets, dictionaries, User classes
+sys.getsizeof()
+-----
+When we do "x = x + y"
+a new object is always created from "x + y", even if x is mutable

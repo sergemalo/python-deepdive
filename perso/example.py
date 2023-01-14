@@ -64,3 +64,18 @@ r2 = Rectangle(1,2)
 
 def ref_count(addr: int):
     return ctypes.c_long.from_address(addr).value
+
+
+class A:
+    def __init__(self):
+        self.i = 10
+        self.t = (1, 2, 3)
+
+class B:
+    def __init__(self):
+        self.i = 10
+        self.t = (1, 2, 3, 4, 5)
+a = A()
+b = B()
+print ("A: {0}; B: {1}".format(sys.getsizeof(a), sys.getsizeof(b)))
+print ("A.t: {0}; B.t: {1}".format(sys.getsizeof(a.t), sys.getsizeof(b.t)))
