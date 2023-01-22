@@ -132,7 +132,8 @@ Every time we assing a new value, a new object is created
 Values referenced by variable can never be changed!!
 a = 10
 b = 10
-------> a anf b point to the same address!!!!
+------> a anf b MIGHT point to the same address because a and b are poiting to immutable object!!!!
+That would not be true if they where pointing to lists.
 -----
 Immutable: numbers, strings, tuples (), frozen sets, User classes 
 Mutable: lists [], sets, dictionaries, User classes
@@ -140,3 +141,31 @@ sys.getsizeof()
 -----
 When we do "x = x + y"
 a new object is always created from "x + y", even if x is mutable
+-----
+Variable equality:
+"is" indicate if they point to the same address ("is not" or "not(is)")
+"==" indicates if values are identical ("!=")
+-----
+To assign a variable to a function, don't use the ()
+a = my_funct
+a = my_funct() --> Will invoke the function!
+We can call the constructor of an int. See help(int)
+-----
+CPython
+JPython
+ironPython c#
+pyPy
+...
+"Interning" - ints: -5 tp 256   ----> Singletons
+Strings: identifiers (no garantee)
+  Can be forced! a = sys.intern("xxx")
+- Comparing strings with high chances of high occurences
+- When comparing lots of string
+-----
+Peephole
+Constants expressions are optimized. Ex: 24*60
+Short sequences < 20. Ex: (1, 2) * 5. "Hello" + " World"
+if e in [1, 2, 3]:   # The list is changed to mutable (to a tuple) sets -> frozensets
+set membership is much faster than a list (tree vs linked list)
+if e in [1, 2, 3]:  # use a set instead: {1, 2, 3}
+

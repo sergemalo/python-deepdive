@@ -1,6 +1,8 @@
 # import this
 import sys
 import ctypes
+import string
+import time
 
 def my_func(a: int, b: int):
     print(
@@ -77,5 +79,32 @@ class B:
         self.t = (1, 2, 3, 4, 5)
 a = A()
 b = B()
-print ("A: {0}; B: {1}".format(sys.getsizeof(a), sys.getsizeof(b)))
-print ("A.t: {0}; B.t: {1}".format(sys.getsizeof(a.t), sys.getsizeof(b.t)))
+#print ("A: {0}; B: {1}".format(sys.getsizeof(a), sys.getsizeof(b)))
+#print ("A.t: {0}; B.t: {1}".format(sys.getsizeof(a.t), sys.getsizeof(b.t)))
+
+def peep_hole():
+    a = 24 * 60
+    b = (1, 2)
+    c = [3, 4] * 11
+    d = {5, 6}
+
+#print (peep_hole.__code__.co_consts)
+
+ll = list(string.ascii_letters)
+tt = tuple(string.ascii_letters)
+ss = set(string.ascii_letters)
+
+def membership_test(n, container):
+    for i in range(n):
+        if 'z' in container:
+            pass
+
+start = time.perf_counter()
+membership_test(10000000, ll)
+end = time.perf_counter()
+print("result = ", end-start)
+
+start = time.perf_counter()
+membership_test(10000000, ss)
+end = time.perf_counter()
+print("result = ", end-start)
