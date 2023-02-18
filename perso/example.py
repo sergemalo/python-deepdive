@@ -3,6 +3,8 @@ import sys
 import ctypes
 import string
 import time
+import fractions
+import math
 
 def my_func(a: int, b: int):
     print(
@@ -99,12 +101,38 @@ def membership_test(n, container):
         if 'z' in container:
             pass
 
-start = time.perf_counter()
-membership_test(10000000, ll)
-end = time.perf_counter()
-print("result = ", end-start)
 
-start = time.perf_counter()
-membership_test(10000000, ss)
-end = time.perf_counter()
-print("result = ", end-start)
+#start = time.perf_counter()
+#membership_test(10000000, ll)
+#end = time.perf_counter()
+#print("result = ", end-start)
+
+#start = time.perf_counter()
+#membership_test(10000000, ss)
+#end = time.perf_counter()
+#print("result = ", end-start)
+
+
+def base_change(val: int, base: int):
+    if base < 2 or val < 0: raise exception
+    if val == 0: return [0]
+
+    ll = []
+    while val > 0:
+        #r = val % base
+        #val = val // base
+        val, r = divmod(val, base)
+        ll.insert(0, r)
+    return ll
+
+ll = base_change(17, 2)
+ss = ""
+for d in ll:
+    ss += str(d)
+#print (ss)
+
+
+ff = fractions.Fraction(1, 3)
+#print (ff)
+ff = fractions.Fraction("1/5")
+#print(ff)

@@ -169,3 +169,40 @@ if e in [1, 2, 3]:   # The list is changed to mutable (to a tuple) sets -> froze
 set membership is much faster than a list (tree vs linked list)
 if e in [1, 2, 3]:  # use a set instead: {1, 2, 3}
 
+
+SECTION 4 - NUMERIC TYPES
+----------
+Integer : int
+Ration  : fractions.Fraction
+Real    : float, decimal.Decimal
+Complex : complex
+Boolean : bool
+----
+int: variable size in memory - will increase as required - No Limit!!
+----
+operations on ints
+"//" operator (floor division)
+a // b = floor (a)  
+n = d * (n//d) + n % d
+135 // 4 = 33
+-135 // 4 = -34
+Modulo (%) is always positive.
+----
+int: constructors
+True: 1; False: 0
+Default base: 10. From 2 to 36!
+val = int("100", base = 2)
+bin(), oct(), hex()
+----
+COMPACT IF
+sign = -1 if val < 0 else 1
+----
+Rational numbers
+ALL floats can be transformed to a fractions.Fraction
+ff = fractions.Fraction(math.pi) # Works to give an approximation
+x.limit_denomiator(limit)
+----
+Floats - C double IEEE-754
+
+
+
